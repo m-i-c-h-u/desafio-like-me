@@ -1,0 +1,22 @@
+{
+  "name": "likeme-backend",
+  "version": "1.0.0",
+  "description": "API REST del desafío Like Me (Parte I) con Express y PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Michelle Valdés",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
+
