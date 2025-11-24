@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const { obtenerPosts, agregarPost } = require('./consultas')
+const { obtenerPosts, agregarPost, modificarLikes, eliminarPost } = require('./consultas')
 
 const app = express()
 app.use(cors())
@@ -22,5 +22,32 @@ app.post('/posts', async (req, res) => {
     res.status(500).send('Error al agregar post')
   }
 })
+
+app.put('/posts/like/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const post = await modificarLikes(id);
+    res.json(post);
+  } catch (error) {
+    res.status(500).send("Error al actualizar los likes");
+  }
+});
+
+app.delete('/posts/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const postEliminado = await eliminarPost(id);
+
+    if (!postEliminado) {
+      return res.status(404).json({ error: "Post no encontrado" });
+    }
+
+    res.json({ message: "Post eliminado con éxito", postEliminado });
+  } catch (error) {
+    console.error("Error al eliminar el post:", error);
+    res.status(500).send("Error al eliminar el post");
+  }
+});
+
 
 app.listen(3000, () => console.log('🚀 Servidor corriendo en http://localhost:3000'))

@@ -13,6 +13,7 @@ Aplicación web fullstack desarrollada como parte del bootcamp de **Desarrollo F
 - [▶️ Ejecución del proyecto](#️-ejecución-del-proyecto)
 - [🧠 Funcionalidades](#-funcionalidades)
 - [🎨 Diseño](#-diseño)
+- [🧱 Segunda parte del desafío](#-segunda-parte-del-desafío)
 - [👩‍💻 Autor](#-autora)
 
 ---
@@ -162,6 +163,18 @@ El frontend cuenta con:
 .Cards con sombra y efecto hover
 .Formularios centrados y responsivos
 .Grid adaptativo (3x2x1 según resolución)
+
+---
+
+## 🧱 Segunda parte del desafío
+
+En esta actualización se implementaron las nuevas funcionalidades solicitadas:
+
+- 🔁 **Ruta PUT**: Permite incrementar el contador de likes por cada publicación.
+- ❌ **Ruta DELETE**: Permite eliminar publicaciones de forma permanente desde la base de datos.
+- 🧩 **Manejo de errores con try/catch**: Todas las operaciones SQL (INSERT, UPDATE, DELETE) están protegidas mediante bloques `try/catch`, asegurando estabilidad y control de errores en el servidor.
+
+Cada una de estas funcionalidades fue probada exitosamente desde el frontend y desde consultas directas al backend.
 
 ---
 
